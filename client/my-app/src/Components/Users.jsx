@@ -6,7 +6,6 @@ import CreateUser from "./CreateUser"
 const Users = () => {
     const [usersData, setUsersData] = useState([])
     
-    
     //to get all the todos:
     const getUser = async () => {
       
@@ -20,7 +19,7 @@ const Users = () => {
     return (< >
        <div><CreateUser  setUsersData={setUsersData}/></div>
        
-       {usersData?usersData.map(user=>{return(
+       {usersData?usersData.sort((a,b)=>a.name.localeCompare(b.name)).map(user=>{return(
         <User user={user} setUsersData={setUsersData}/>
        )}):<></>}
        

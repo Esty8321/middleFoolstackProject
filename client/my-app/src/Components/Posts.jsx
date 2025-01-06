@@ -20,7 +20,7 @@ const Posts = () => {
     return (< >
        <div><CreatePost setPostsData={setPostsData}/></div>
        
-       {postsData.map(post=>{return(
+       {postsData.sort((a,b)=>a.title.localeCompare(b.title)).map(post=>{return(
         <Post post={post} setPostsData={setPostsData}/>
        )})}
        
